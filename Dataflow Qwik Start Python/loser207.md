@@ -17,9 +17,9 @@
 
 
 ```
-curl -LO raw.githubusercontent.com/Techcps/Google-Cloud-Skills-Boost/master/Dataflow%20Qwik%20Start%20Python/techcps207.sh
-sudo chmod +x techcps207.sh
-./techcps207.sh
+curl -LO raw.githubusercontent.com/Techcps/Google-Cloud-Skills-Boost/master/Dataflow%20Qwik%20Start%20Python/loser207.sh
+sudo chmod +x loser207.sh
+./loser207.sh
 ```
 
 ---
