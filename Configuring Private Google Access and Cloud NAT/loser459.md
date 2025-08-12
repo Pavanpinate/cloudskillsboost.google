@@ -17,7 +17,7 @@
 
 
 ```
-curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/blob/bcb1e7370ad29c90cd889ce099fe5c9803a0af1b/Configuring%20Private%20Google%20Access%20and%20Cloud%20NAT/loser459.sh
+curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Configuring%20Private%20Google%20Access%20and%20Cloud%20NAT/loser459.sh
 
 sudo chmod +x loser459.sh
 
