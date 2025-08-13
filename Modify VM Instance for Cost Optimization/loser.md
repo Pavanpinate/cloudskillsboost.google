@@ -14,9 +14,9 @@
 ### 🚨Copy and run the below commands in Cloud Shell:
 
 ```
-curl -LO raw.githubusercontent.com/Techcps/Google-Cloud-Skills-Boost/master/Modify%20VM%20Instance%20for%20Cost%20Optimization/techcps.sh
-sudo chmod +x techcps.sh
-./techcps.sh
+curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Modify%20VM%20Instance%20for%20Cost%20Optimization/loser.sh
+sudo chmod +x loser.sh
+./loser.sh
 ```
 
 ### Congratulations, you're all done with the lab 😄
