@@ -6,11 +6,11 @@
 ## Run in CloudShell and follow video:
 
 ```
-curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Developer%20Essentials%20Creating%20Secrets%20with%20Secret%20Manager/loser.sh
+curl -LO raw.githubusercontent.com/gcpsolution99/GCP-solution/refs/heads/main/GSP/Abhi_Creating_Secrets.sh
 
-sudo chmod +x loser.sh
+sudo chmod +x Abhi_Creating_Secrets.sh
 
-./loser.sh
+./Abhi_Creating_Secrets.sh
 ```
 
 ## ©Credit :
