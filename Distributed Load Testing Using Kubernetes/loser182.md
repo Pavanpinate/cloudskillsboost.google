@@ -14,9 +14,9 @@
 
 
 ```
-curl -LO raw.githubusercontent.com/Techcps/Google-Cloud-Skills-Boost/master/Distributed%20Load%20Testing%20Using%20Kubernetes/techcps182.sh
-sudo chmod +x techcps182.sh
-./techcps182.sh
+curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Distributed%20Load%20Testing%20Using%20Kubernetes/loser182.sh
+sudo chmod +x loser182.sh
+./loser182.sh
 ```
 
 ---
