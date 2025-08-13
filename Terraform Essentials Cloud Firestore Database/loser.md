@@ -25,9 +25,9 @@ The goal is to enhance your learning experience — not bypass it.
 <h3>🚀 Setup Environment using Cloud Shell:</h3>
 
 ```bash
-curl -LO raw.githubusercontent.com/quiccklabs/Labs_solutions/refs/heads/master/Terraform%20Essentials%20Cloud%20Firestore%20Database/quicklab.sh
-sudo chmod +x quicklab.sh
-./quicklab.sh
+curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Terraform%20Essentials%20Cloud%20Firestore%20Database/loser.sh
+sudo chmod +x loser.sh
+./loser.sh
 ```
 
 <p style="font-size: 15px; color: #555;"><i>👉 This runs the script to set up your environment. It provisions resources and configures as needed.</i></p>
