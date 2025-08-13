@@ -6,11 +6,11 @@
 ## Run in CloudShell and follow video:
 
 ```
-curl -LO raw.githubusercontent.com/gcpsolution99/GCP-solution/refs/heads/main/GSP/Abhi_Firewall_Policy.sh
+curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Terraform%20Essentials%20Firewall%20Policy/loser.sh
 
-sudo chmod +x Abhi_Firewall_Policy.sh
+sudo chmod +x loser.sh
 
-./Abhi_Firewall_Policy.sh
+./loser.sh
 ```
 
 ## ©Credit :
