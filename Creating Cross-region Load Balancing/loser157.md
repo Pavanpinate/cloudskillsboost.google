@@ -14,9 +14,9 @@
 ### 🚨Copy and run the below commands in Cloud Shell:
 
 ```
-curl -LO raw.githubusercontent.com/Techcps/Google-Cloud-Skills-Boost/master/Creating%20Cross-region%20Load%20Balancing/techcps157.sh
-sudo chmod +x techcps157.sh
-./techcps157.sh
+curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Creating%20Cross-region%20Load%20Balancing/loser157.sh
+sudo chmod +x loser157.sh
+./loser157.sh
 ```
 
 ### 🚨Export the Zone names correctly:
