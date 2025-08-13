@@ -14,9 +14,9 @@
 ### 🚨Copy and run the below commands in Cloud Shell:
 
 ```
-curl -LO raw.githubusercontent.com/Techcps/Google-Cloud-Skills-Boost/master/Create%20VPC%20Peering%20Connection%20between%20VPCs/techcps.sh
-sudo chmod +x techcps.sh
-./techcps.sh
+curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Create%20VPC%20Peering%20Connection%20between%20VPCs/loser.sh
+sudo chmod +x loser.sh
+./loser.sh
 ```
 
 ### Congratulations, you're all done with the lab 😄
