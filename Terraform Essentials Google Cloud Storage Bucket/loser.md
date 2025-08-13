@@ -8,9 +8,9 @@
 ```
 curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Terraform%20Essentials%20Google%20Cloud%20Storage%20Bucket/loser.sh
 
-sudo chmod +x Abhi_Storage_Bucket.sh
+sudo chmod +x loser.sh
 
-./Abhi_Storage_Bucket.sh
+./loser.sh
 ```
 
 ## ©Credit :
