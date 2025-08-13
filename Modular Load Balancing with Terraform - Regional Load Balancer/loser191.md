@@ -14,9 +14,9 @@
 
 
 ```
-curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Create%20VPC%20Peering%20Connection%20between%20VPCs/loser.sh
-sudo chmod +x loser.sh
-./loser.sh
+curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Modular%20Load%20Balancing%20with%20Terraform%20-%20Regional%20Load%20Balancer/loser191.sh
+sudo chmod +x loser191.sh
+./loser191.sh
 ```
 
 ---
