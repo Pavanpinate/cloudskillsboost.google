@@ -15,11 +15,11 @@
 ### 🚨Copy and run the below commands in Cloud Shell:
 
 ```
-curl -LO raw.githubusercontent.com/Titash-shil/Get-Started-with-Security-Command-Center-GSP1124/refs/heads/main/qwiklab_explorers_gsp1124.sh
+curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Get%20Started%20with%20Security%20Command%20Center/loser1124.sh
 
-sudo chmod +x qwiklab_explorers_gsp1124.sh
+sudo chmod +x loser1124.sh
 
-./qwiklab_explorers_gsp1124.sh
+./loser1124.sh
 ```
 ---
 
