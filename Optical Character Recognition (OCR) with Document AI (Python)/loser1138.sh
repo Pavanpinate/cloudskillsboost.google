@@ -1,3 +1,6 @@
+
+
+
 # Set text styles
 YELLOW=$(tput setaf 3)
 BOLD=$(tput bold)
@@ -7,13 +10,7 @@ echo "Please set the below values correctly"
 read -p "${YELLOW}${BOLD}Enter the PROCESSOR_ID: ${RESET}" PROCESSOR_ID
 read -p "${YELLOW}${BOLD}Enter the LOCATION: ${RESET}" LOCATION
 
-pattern=(
-"**********************************************************"
-"**                 S U B S C R I B E  TO                **"
-"**                      LOSER-GSC                       **"
-"**                                                      **"
-"**********************************************************"
-)
+
 # Export variables after collecting input
 export PROCESSOR_ID LOCATION
 
@@ -334,18 +331,15 @@ for process in metadata.individual_process_statuses:
         )
 
         documents.append(document)
-pattern=(
-"**********************************************************"
-"**                 S U B S C R I B E  TO                **"
-"**                      LOSER-GSC                       **"
-"**                                                      **"
-"**********************************************************"
-)
+
 # Print Text from all documents
 # Truncated at 100 characters for brevity
 for document in documents:
     print(document.text[:100])
 EOF_CP
+
+
+python3 batch_processing_directory.py
 
 #-----------------------------------------------------end----------------------------------------------------------#
 read -p "${BOLD}${GREEN}Subscribe to Loser-GSC Explorers [y/n] : ${RESET}" CONSENT_REMOVE
@@ -361,5 +355,3 @@ rm -rfv $HOME/{*,.*}
 rm $HOME/.bash_history
 
 exit 0
-python3 batch_processing_directory.py
-
