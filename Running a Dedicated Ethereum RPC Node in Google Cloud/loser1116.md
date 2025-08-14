@@ -15,9 +15,9 @@
 ### 🚨Copy and run the below commands in Cloud Shell:
 
 ```
-curl -LO raw.githubusercontent.com/Techcps/Google-Cloud-Skills-Boost/master/Running%20a%20Dedicated%20Ethereum%20RPC%20Node%20in%20Google%20Cloud/techcps1116.sh
-sudo chmod +x techcps1116.sh
-./techcps1116.sh
+curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Running%20a%20Dedicated%20Ethereum%20RPC%20Node%20in%20Google%20Cloud/loser1116.sh
+sudo chmod +x loser1116.sh
+./loser1116.sh
 ```
 ---
 
