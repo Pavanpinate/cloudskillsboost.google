@@ -15,11 +15,11 @@
 ### 🚨Copy and run the below commands in Cloud Shell:
 
 ```
-curl -LO raw.githubusercontent.com/quiccklabs/Labs_solutions/master/Deploying%20a%20FaultTolerant%20Microsoft%20Active%20Directory%20Environment/quicklabgsp118.sh
+curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Deploying%20a%20Fault-Tolerant%20Microsoft%20Active%20Directory%20Environment/loser118.sh
 
-sudo chmod +x quicklabgsp118.sh
+sudo chmod +x loser118.sh
 
-./quicklabgsp118.sh
+./loser118.sh
 ```
 ---
 
