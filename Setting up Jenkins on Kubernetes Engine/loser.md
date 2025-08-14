@@ -17,9 +17,9 @@ export ZONE=
 ## 🚨Copy and run the below commands in Cloud Shell:
 
 ```
-curl -LO raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Setting%20up%20Jenkins%20on%20Kubernetes%20Engine/techcps117.sh
-sudo chmod +x techcps117.sh
-./techcps117.sh
+curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Setting%20up%20Jenkins%20on%20Kubernetes%20Engine/loser117.sh
+sudo chmod +x loser117.sh
+./loser117.sh
 ```
 
 ### Congratulations, you're all done with the lab 😄
