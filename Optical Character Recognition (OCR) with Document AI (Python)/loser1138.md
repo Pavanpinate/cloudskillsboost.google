@@ -14,9 +14,9 @@
 ### 🚨Copy and run the below commands in Cloud Shell:
 
 ```
-curl -LO raw.githubusercontent.com/Techcps/Google-Cloud-Skills-Boost/master/Configuring%20Network%20Connectivity%20Center%20as%20a%20Transit%20Hub/techcps911.sh
-sudo chmod +x techcps911.sh
-./techcps911.sh
+curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Optical%20Character%20Recognition%20(OCR)%20with%20Document%20AI%20(Python)/loser1138.sh
+sudo chmod +x loser1138.sh
+./loser1138.sh
 ```
 
 ---
