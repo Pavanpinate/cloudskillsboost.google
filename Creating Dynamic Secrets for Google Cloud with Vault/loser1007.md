@@ -16,9 +16,9 @@
 ### 🚨Copy and run the below commands in Cloud Shell:
 
 ```
-curl -LO raw.githubusercontent.com/Techcps/Google-Cloud-Skills-Boost/master/Creating%20Dynamic%20Secrets%20for%20Google%20Cloud%20with%20Vault/techcps1007.sh
-sudo chmod +x techcps1007.sh
-./techcps1007.sh
+curl -LO github.com/Pavanpinate/cloudskillsboost.google/raw/refs/heads/main/Creating%20Dynamic%20Secrets%20for%20Google%20Cloud%20with%20Vault/loser1007.sh
+sudo chmod +x loser1007.sh
+./loser1007.sh
 ```
 
 ---
