@@ -26,9 +26,9 @@ export ZONE3=
 ### 🚨Copy and run the below commands in Cloud Shell:
 
 ```
-curl -LO raw.githubusercontent.com/Techcps/Google-Cloud-Skills-Boost/master/Cloud%20DNS%3A%20Traffic%20Steering%20using%20Geolocation%20Policy/techcps1008.sh
-sudo chmod +x techcps1008.sh
-./techcps1008.sh
+curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Cloud%20DNS_%20Traffic%20Steering%20using%20Geolocation%20Policy/loser1008.sh
+sudo chmod +x loser1008.sh
+./loser1008.sh
 ```
 
 ---
