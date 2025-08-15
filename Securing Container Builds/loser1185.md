@@ -17,9 +17,9 @@
 ## 🚨Copy and run the below commands in Cloud Shell:
 
 ```
-curl -LO raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Securing%20Container%20Builds/techcps1185.sh
-sudo chmod +x techcps1185.sh
-./techcps1185.sh
+curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Securing%20Container%20Builds/loser1185.sh
+sudo chmod +x loser1185.sh
+./loser1185.sh
 ```
 
 ---
