@@ -27,6 +27,11 @@ gcloud compute instances add-tags gcelab2 --tags http-server --zone $ZONE
 
 gcloud compute firewall-rules list --filter=ALLOW:'80'
 
+gcloud compute instances list --filter='tags:http-server'
+
+curl http://$(gcloud compute instances list --filter=name:gcelab2 --format='value(EXTERNAL_IP)')
+
+
 read -p "${BOLD}${GREEN}Subscribe to Loser-GSC Explorers [y/n] : ${RESET}" CONSENT_REMOVE
 
 while [ "$CONSENT_REMOVE" != 'y' ]; do
@@ -54,7 +59,4 @@ do
     echo -e "${YELLOW}${line}${NC}"
 done
 
-gcloud compute instances list --filter='tags:http-server'
-
-curl http://$(gcloud compute instances list --filter=name:gcelab2 --format='value(EXTERNAL_IP)')
 
