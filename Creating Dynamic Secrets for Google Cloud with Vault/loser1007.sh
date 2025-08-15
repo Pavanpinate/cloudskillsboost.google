@@ -160,6 +160,13 @@ resource "buckets/$DEVSHELL_PROJECT_ID" {
 }
 EOF_CP
 
+vault write gcp/roleset/my-token-roleset \
+    project="$DEVSHELL_PROJECT_ID" \
+    secret_type="access_token"  \
+    token_scopes="https://www.googleapis.com/auth/cloud-platform" \
+    bindings=@bindings.hcl
+
+
 read -p "${BOLD}${GREEN}Subscribe to Loser-GSC Explorers [y/n] : ${RESET}" CONSENT_REMOVE
 
 while [ "$CONSENT_REMOVE" != 'y' ]; do
@@ -186,11 +193,6 @@ for line in "${pattern[@]}"
 do
     echo -e "${YELLOW}${line}${NC}"
 done
-vault write gcp/roleset/my-token-roleset \
-    project="$DEVSHELL_PROJECT_ID" \
-    secret_type="access_token"  \
-    token_scopes="https://www.googleapis.com/auth/cloud-platform" \
-    bindings=@bindings.hcl
 
 
 
