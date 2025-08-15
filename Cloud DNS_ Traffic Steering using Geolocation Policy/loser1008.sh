@@ -76,6 +76,16 @@ export US_WEB_IP=$(gcloud compute instances describe us-web-vm --zone=$ZONE1 --f
 export EUROPE_WEB_IP=$(gcloud compute instances describe europe-web-vm --zone=$ZONE2 --format="value(networkInterfaces.networkIP)")
 
 gcloud dns managed-zones create example --description=test --dns-name=example.com --networks=default --visibility=private
+
+
+gcloud beta dns record-sets create geo.example.com \
+--ttl=5 --type=A --zone=example \
+--routing_policy_type=GEO \
+--routing_policy_data="$REGION1=$US_WEB_IP;$REGION2=$EUROPE_WEB_IP"
+
+
+gcloud beta dns record-sets list --zone=example
+
 read -p "${BOLD}${GREEN}Subscribe to Loser-GSC Explorers [y/n] : ${RESET}" CONSENT_REMOVE
 
 while [ "$CONSENT_REMOVE" != 'y' ]; do
@@ -102,13 +112,5 @@ for line in "${pattern[@]}"
 do
     echo -e "${YELLOW}${line}${NC}"
 done
-
-gcloud beta dns record-sets create geo.example.com \
---ttl=5 --type=A --zone=example \
---routing_policy_type=GEO \
---routing_policy_data="$REGION1=$US_WEB_IP;$REGION2=$EUROPE_WEB_IP"
-
-
-gcloud beta dns record-sets list --zone=example
 
 
