@@ -17,9 +17,9 @@
 ### 🚨Copy and run the below commands in Cloud Shell:
 
 ```
-curl -LO raw.githubusercontent.com/Techcps/Google-Cloud-Skills-Boost/master/APIs%20Explorer%20Cloud%20Storage/techcps421.sh
-sudo chmod +x techcps421.sh
-./techcps421.sh
+curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/APIs%20Explorer%20Cloud%20Storage/loser421.sh
+sudo chmod +x loser421.sh
+./loser421.sh
 ```
 ---
 
