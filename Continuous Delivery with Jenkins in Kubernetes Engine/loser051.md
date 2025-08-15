@@ -19,9 +19,9 @@
 export ZONE=
 ```
 ```
-curl -LO raw.githubusercontent.com/Techcps/Google-Cloud-Skills-Boost/master/Continuous%20Delivery%20with%20Jenkins%20in%20Kubernetes%20Engine/techcps051.sh
-sudo chmod +x techcps051.sh
-./techcps051.sh
+curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Continuous%20Delivery%20with%20Jenkins%20in%20Kubernetes%20Engine/loser051.sh
+sudo chmod +x loser051.sh
+./loser051.sh
 ```
 
 ---
