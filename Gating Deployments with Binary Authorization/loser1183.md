@@ -16,9 +16,9 @@
 ### 🚨Copy and run the below commands in Cloud Shell:
 
 ```
-curl -LO raw.githubusercontent.com/Techcps/Google-Cloud-Skills-Boost/master/Gating%20Deployments%20with%20Binary%20Authorization/techcps1183.sh
-sudo chmod +x techcps1183.sh
-./techcps1183.sh
+curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Gating%20Deployments%20with%20Binary%20Authorization/loser1183.sh
+sudo chmod +x loser1183.sh
+./loser1183.sh
 ```
 
 ---
