@@ -16,9 +16,9 @@
 ### 🚨Copy and run the below commands in Cloud Shell:
 
 ```
-curl -LO raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Secure%20Software%20Delivery%3A%20Challenge%20Lab/techcps521.sh
-sudo chmod +x techcps521.sh
-./techcps521.sh
+curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Secure%20Software%20Delivery_%20Challenge%20Lab/loser521.sh
+sudo chmod +x loser521.sh
+./loser521.sh
 ```
 
 ### ⚠️Enter the REGION Name correctly:
