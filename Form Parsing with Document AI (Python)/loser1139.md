@@ -6,7 +6,7 @@
 ## Run in CloudShell and follow video:
 
 ```
-curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Form%20Parsing%20with%20Document%20AI%20(Python)/loser1139.sh
+curl -L -o loser1139.sh "https://raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Form%20Parsing%20with%20Document%20AI%20(Python)/loser1139.sh"
 
 sudo chmod +x loser1139.sh
 
