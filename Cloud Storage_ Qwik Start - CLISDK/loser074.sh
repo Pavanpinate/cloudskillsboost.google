@@ -29,6 +29,8 @@ gsutil ls gs://$PROJECT_ID-techcps
 
 gsutil ls -l gs://$PROJECT_ID-techcps/ada.jpg
 
+gsutil acl ch -u AllUsers:R gs://$PROJECT_ID-techcps/ada.jpg
+
 read -p "${BOLD}${GREEN}Subscribe to Loser-GSC Explorers [y/n] : ${RESET}" CONSENT_REMOVE
 
 while [ "$CONSENT_REMOVE" != 'y' ]; do
@@ -56,5 +58,5 @@ do
     echo -e "${YELLOW}${line}${NC}"
 done
 
-gsutil acl ch -u AllUsers:R gs://$PROJECT_ID-techcps/ada.jpg
+
 
