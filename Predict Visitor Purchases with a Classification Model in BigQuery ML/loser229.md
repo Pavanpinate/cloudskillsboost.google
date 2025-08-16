@@ -7,7 +7,7 @@
 * In the GCP Console active your Cloud Shell and run the following commands:
 
 ```
-curl -LO raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Predict%20Visitor%20Purchases%20with%20a%20Classification%20Model%20in%20BigQuery%20ML/techcpsgsp229.sh
+curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Predict%20Visitor%20Purchases%20with%20a%20Classification%20Model%20in%20BigQuery%20ML/loser229.sh
 
 sudo chmod +x techcpsgsp229.sh
 
