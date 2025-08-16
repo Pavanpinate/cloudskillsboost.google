@@ -9,9 +9,9 @@
 ```
 curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Predict%20Visitor%20Purchases%20with%20a%20Classification%20Model%20in%20BigQuery%20ML/loser229.sh
 
-sudo chmod +x techcpsgsp229.sh
+sudo chmod +x loser229.sh
 
-./techcpsgsp229.sh
+./loser229.sh
 
 ```
 
