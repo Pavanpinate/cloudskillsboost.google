@@ -4,8 +4,8 @@
 
 ```
 gcloud services enable apikeys.googleapis.com
-gcloud alpha services api-keys create --display-name="techcps"
-CP=$(gcloud alpha services api-keys list --format="value(name)" --filter "displayName=techcps")
+gcloud alpha services api-keys create --display-name="loser"
+CP=$(gcloud alpha services api-keys list --format="value(name)" --filter "displayName=loser")
 API_KEY=$(gcloud alpha services api-keys get-key-string $CP --format="value(keyString)")
 
 cat > request.json <<EOF_CP
