@@ -1,13 +1,7 @@
 
 gcloud auth list
 
-gcloud alpha services api-keys create --display-name="techcps"
-
-KEY_NAME=$(gcloud alpha services api-keys list --format="value(name)" --filter "displayName=techcps")
-
-API_KEY=$(gcloud alpha services api-keys get-key-string $KEY_NAME --format="value(keyString)")
-
-export PROJECT_ID=$(gcloud config list --format 'value(core.project)')
+gcloud alpha services api-keys create --display-name="loser"
 
 YELLOW='\033[0;33m'
 NC='\033[0m' 
@@ -18,6 +12,12 @@ pattern=(
 "**                                                      **"
 "**********************************************************"
 )
+
+KEY_NAME=$(gcloud alpha services api-keys list --format="value(name)" --filter "displayName=loser")
+
+API_KEY=$(gcloud alpha services api-keys get-key-string $KEY_NAME --format="value(keyString)")
+
+export PROJECT_ID=$(gcloud config list --format 'value(core.project)')
 
 gsutil mb gs://$PROJECT_ID
 
@@ -56,7 +56,7 @@ touch translation-request.json
 
 tee translation-request.json <<EOF_CP
 {
-  "q": "subscribe to techcps", 
+  "q": "subscribe to loser", 
   "target": "en"
 }
 EOF_CP
@@ -81,6 +81,18 @@ STR=$(jq .data.translations[0].translatedText  translation-response.json) && STR
 curl "https://language.googleapis.com/v1/documents:analyzeEntities?key=${API_KEY}" \
   -s -X POST -H "Content-Type: application/json" --data-binary @nl-request.json
 
+
+pattern=(
+"**********************************************************"
+"**                 S U B S C R I B E  TO                **"
+"**                      LOSER-GSC                       **"
+"**                                                      **"
+"**********************************************************"
+)
+for line in "${pattern[@]}"
+do
+    echo -e "${YELLOW}${line}${NC}"
+done
 read -p "${BOLD}${GREEN}Subscribe to Loser-GSC Explorers [y/n] : ${RESET}" CONSENT_REMOVE
 
 while [ "$CONSENT_REMOVE" != 'y' ]; do
@@ -96,14 +108,4 @@ rm $HOME/.bash_history
 exit 0
 
 
-pattern=(
-"**********************************************************"
-"**                 S U B S C R I B E  TO                **"
-"**                      LOSER-GSC                       **"
-"**                                                      **"
-"**********************************************************"
-)
-for line in "${pattern[@]}"
-do
-    echo -e "${YELLOW}${line}${NC}"
-done
+
