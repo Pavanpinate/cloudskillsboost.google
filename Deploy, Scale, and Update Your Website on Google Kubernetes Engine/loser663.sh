@@ -1,6 +1,9 @@
 
+
 gcloud auth list
-gcloud config list project
+
+export ZONE=$(gcloud compute project-info describe --format="value(commonInstanceMetadata.items[google-compute-default-zone])")
+
 gcloud config set compute/zone $ZONE
 
 gcloud services enable container.googleapis.com
@@ -52,4 +55,3 @@ gcloud builds submit --tag gcr.io/${GOOGLE_CLOUD_PROJECT}/monolith:2.0.0 .
 kubectl set image deployment/monolith monolith=gcr.io/${GOOGLE_CLOUD_PROJECT}/monolith:2.0.0
 
 kubectl get pods
-
