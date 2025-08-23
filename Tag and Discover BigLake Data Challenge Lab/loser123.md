@@ -14,8 +14,9 @@
 ---
 
 ### 🚨Copy and run the below commands in Cloud Shell:
-
-
+```
+export REGION=
+```
 ```
 curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Tag%20and%20Discover%20BigLake%20Data%20Challenge%20Lab/loser123.sh
 sudo chmod +x loser123.sh
