@@ -16,9 +16,9 @@
 ### 🚨Copy and run the below commands in Cloud Shell:
 
 ```
-curl -LO raw.githubusercontent.com/Techcps/Google-Cloud-Skills-Boost/master/Cloud%20Logging%20on%20Kubernetes%20Engine/techcps483.sh
-sudo chmod +x techcps483.sh
-./techcps483.sh
+curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Cloud%20Logging%20on%20Kubernetes%20Engine/loser483.sh
+sudo chmod +x loser483.sh
+./loser483.sh
 ```
 
 ---
