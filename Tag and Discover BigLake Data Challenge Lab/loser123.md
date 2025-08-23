@@ -18,8 +18,8 @@
 
 ```
 curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Tag%20and%20Discover%20BigLake%20Data%20Challenge%20Lab/loser123.sh
-sudo chmod +x loser729.sh
-./loser729.sh
+sudo chmod +x loser123.sh
+./loser123.sh
 ```
 
 ---
