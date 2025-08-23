@@ -1,6 +1,6 @@
 
 
-### 💡 Lab Link: [BigQuery: Qwik Start - Command Line - GSP071](https://www.cloudskillsboost.google/focuses/577?parent=catalog)
+### 💡 Lab Link: [BigQuery: Qwik Start - Console - GSP072](https://www.cloudskillsboost.google/focuses/1145?parent=catalog)
 
 
 
