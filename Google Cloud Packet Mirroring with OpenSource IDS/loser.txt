@@ -1,0 +1,245 @@
+#!/bin/bash
+
+# ==============================================
+# Google Cloud Network Infrastructure Setup
+# Welcome to Dr. Abhishek Cloud Tutorials!
+# YouTube: https://www.youtube.com/@drabhishek.5460/videos
+# ==============================================
+
+# Set text styles
+YELLOW=$(tput setaf 3)
+BOLD=$(tput bold)
+GREEN=$(tput setaf 2)
+BLUE=$(tput setaf 4)
+RESET=$(tput sgr0)
+
+# ASCII Art Banner
+echo "                                                                               
+  _       ____   _____  ______ _____  
+ | |     / __ \ / ____||  ____|  __ \ 
+ | |    | |  | | (___  | |__  | |__) |  
+ | |    | |  | |\___ \ |  __| |  _  / 
+ | |____| |__| |____) || |____| | \ \ 
+ |______|\____/|_____/ |______|_|  \_\
+                                                    
+"
+
+echo "=================================================================="
+echo "           WELCOME TO LOSER-GSP TUTORIALS!"
+echo "=================================================================="
+echo " YouTube Channel: https://www.youtube.com/@Loser-gsc"
+echo "=================================================================="
+echo "    SUBSCRIBE for more Cloud Infrastructure tutorials!"
+echo "=================================================================="
+echo ""
+
+# Function to display progress
+progress() {
+    echo "${GREEN}✅${RESET} ${BOLD}$1${RESET}"
+    sleep 2
+}
+
+# Function to handle errors
+handle_error() {
+    echo "${YELLOW}⚠️  Error: $1${RESET}"
+    sleep 2
+}
+
+# Get zone input
+echo "${BOLD}Please set the below values correctly${RESET}"
+read -p "${YELLOW}${BOLD}Enter the ZONE (e.g., us-central1-a): ${RESET}" ZONE
+
+progress "Setting compute zone to: $ZONE"
+gcloud config set compute/zone $ZONE
+
+export REGION="${ZONE%-*}"
+progress "Extracted region: $REGION"
+
+gcloud config set compute/region $REGION
+
+# Network Infrastructure Setup
+progress "Creating VPC network: dm-stamford"
+gcloud compute networks create dm-stamford \
+--subnet-mode=custom
+
+progress "Creating primary subnet: dm-stamford-$REGION"
+gcloud compute networks subnets create dm-stamford-$REGION \
+--range=172.21.0.0/24 \
+--network=dm-stamford \
+--region=$REGION
+
+progress "Creating IDS subnet: dm-stamford-$REGION-ids"
+gcloud compute networks subnets create dm-stamford-$REGION-ids \
+--range=172.21.1.0/24 \
+--network=dm-stamford \
+--region=$REGION
+
+# Firewall Rules
+progress "Creating firewall rule for web traffic"
+gcloud compute firewall-rules create fw-dm-stamford-allow-any-web \
+--direction=INGRESS \
+--priority=1000 \
+--network=dm-stamford \
+--action=ALLOW \
+--rules=tcp:80,icmp \
+--source-ranges=0.0.0.0/0
+
+progress "Creating firewall rule for IDS traffic"
+gcloud compute firewall-rules create fw-dm-stamford-ids-any-any \
+--direction=INGRESS \
+--priority=1000 \
+--network=dm-stamford \
+--action=ALLOW \
+--rules=all \
+--source-ranges=0.0.0.0/0 \
+--target-tags=ids
+
+progress "Creating firewall rule for IAP proxy"
+gcloud compute firewall-rules create fw-dm-stamford-iapproxy \
+--direction=INGRESS \
+--priority=1000 \
+--network=dm-stamford \
+--action=ALLOW \
+--rules=tcp:22,icmp \
+--source-ranges=35.235.240.0/20
+
+# NAT Gateway
+progress "Creating Cloud Router for NAT"
+gcloud compute routers create router-stamford-nat-$REGION \
+--region=$REGION \
+--network=dm-stamford
+
+progress "Configuring NAT gateway"
+gcloud compute routers nats create nat-gw-dm-stamford-$REGION \
+--router=router-stamford-nat-$REGION \
+--router-region=$REGION \
+--auto-allocate-nat-external-ips \
+--nat-all-subnet-ip-ranges
+
+# Web Server Instance Template
+progress "Creating web server instance template"
+gcloud compute instance-templates create template-dm-stamford-web-$REGION \
+--region=$REGION \
+--network=dm-stamford \
+--subnet=dm-stamford-$REGION \
+--machine-type=e2-small \
+--image=ubuntu-1604-xenial-v20200807 \
+--image-project=ubuntu-os-cloud \
+--tags=webserver \
+--metadata=startup-script='#! /bin/bash
+  apt-get update
+  apt-get install apache2 -y
+  vm_hostname="$(curl -H "Metadata-Flavor:Google" \
+  http://169.254.169.254/computeMetadata/v1/instance/name)"
+  echo "Page served from: $vm_hostname" | \
+  tee /var/www/html/index.html
+  systemctl restart apache2'
+
+progress "Creating web server managed instance group"
+gcloud compute instance-groups managed create mig-dm-stamford-web-$REGION \
+    --template=template-dm-stamford-web-$REGION \
+    --size=2 \
+    --zone=$ZONE
+
+# IDS Instance Template
+progress "Creating IDS instance template"
+gcloud compute instance-templates create template-dm-stamford-ids-$REGION \
+--region=$REGION \
+--network=dm-stamford \
+--no-address \
+--subnet=dm-stamford-$REGION-ids \
+--image=ubuntu-1604-xenial-v20200807 \
+--image-project=ubuntu-os-cloud \
+--tags=ids,webserver \
+--metadata=startup-script='#! /bin/bash
+  apt-get update
+  apt-get install apache2 -y
+  vm_hostname="$(curl -H "Metadata-Flavor:Google" \
+  http://169.254.169.254/computeMetadata/v1/instance/name)"
+  echo "Page served from: $vm_hostname" | \
+  tee /var/www/html/index.html
+  systemctl restart apache2'
+
+progress "Creating IDS managed instance group"
+gcloud compute instance-groups managed create mig-dm-stamford-ids-$REGION \
+    --template=template-dm-stamford-ids-$REGION \
+    --size=1 \
+    --zone=$ZONE
+
+# Load Balancer Setup
+progress "Creating health check for TCP port 80"
+gcloud compute health-checks create tcp hc-tcp-80 --port 80
+
+progress "Creating backend service for Suricata IDS"
+gcloud compute backend-services create be-dm-stamford-suricata-$REGION \
+--load-balancing-scheme=INTERNAL \
+--health-checks=hc-tcp-80 \
+--network=dm-stamford \
+--protocol=TCP \
+--region=$REGION
+
+progress "Adding backend to the service"
+gcloud compute backend-services add-backend be-dm-stamford-suricata-$REGION \
+--instance-group=mig-dm-stamford-ids-$REGION \
+--instance-group-zone=$ZONE \
+--region=$REGION
+
+progress "Creating internal load balancer"
+gcloud compute forwarding-rules create ilb-dm-stamford-suricata-ilb-$REGION \
+--load-balancing-scheme=INTERNAL \
+--backend-service be-dm-stamford-suricata-$REGION \
+--is-mirroring-collector \
+--network=dm-stamford \
+--region=$REGION \
+--subnet=dm-stamford-$REGION-ids \
+--ip-protocol=TCP \
+--ports=all
+
+# Packet Mirroring
+progress "Configuring packet mirroring for web traffic"
+gcloud compute packet-mirrorings create mirror-dm-stamford-web \
+--collector-ilb=ilb-dm-stamford-suricata-ilb-$REGION \
+--network=dm-stamford \
+--mirrored-subnets=dm-stamford-$REGION \
+--region=$REGION
+
+# Final Output
+echo ""
+echo "${GREEN}==================================================================${RESET}"
+echo "${BOLD}🎉 NETWORK INFRASTRUCTURE SETUP COMPLETED SUCCESSFULLY!${RESET}"
+echo "${GREEN}==================================================================${RESET}"
+echo ""
+echo "${BOLD}📊 RESOURCES CREATED:${RESET}"
+echo "  - VPC Network: dm-stamford"
+echo "  - Subnets: 2 subnets in $REGION"
+echo "  - Firewall Rules: 3 rules configured"
+echo "  - NAT Gateway: Cloud Router with NAT"
+echo "  - Instance Groups: Web servers (2) + IDS (1)"
+echo "  - Load Balancer: Internal LB for IDS"
+echo "  - Packet Mirroring: Web traffic to IDS"
+echo ""
+echo "${BOLD}🔧 NEXT STEPS:${RESET}"
+echo "  - Test web servers: curl http://[WEB_SERVER_IP]"
+echo "  - Verify IDS traffic mirroring"
+echo "  - Monitor network traffic patterns"
+echo ""
+echo "${BLUE}==================================================================${RESET}"
+echo "${BOLD}📺 LIKE THIS TUTORIAL? SUBSCRIBE TO loser TUTORIALS!${RESET}"
+echo "${BLUE}🌐 YouTube: https://www.youtube.com/@Loser-gsc${RESET}"
+echo "${BLUE}==================================================================${RESET}"
+echo "${BOLD}   Don't forget to LIKE, SHARE, and COMMENT on the tutorials!${RESET}"
+echo "${BLUE}==================================================================${RESET}"
+
+# Display created resources
+progress "Displaying created resources..."
+echo "${BOLD}VPC Networks:${RESET}"
+gcloud compute networks list --filter="name:dm-stamford"
+
+echo "${BOLD}Subnets:${RESET}"
+gcloud compute networks subnets list --network=dm-stamford
+
+echo "${BOLD}Firewall Rules:${RESET}"
+gcloud compute firewall-rules list --filter="network:dm-stamford"
+
+echo "${BOLD}Instance Groups:${RESET}"
+gcloud compute instance-groups list --filter="name:mig-dm-stamford"
