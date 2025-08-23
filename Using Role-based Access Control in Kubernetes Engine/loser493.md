@@ -16,9 +16,9 @@
 ### 🚨Copy and run the below commands in Cloud Shell:
 
 ```
-curl -LO raw.githubusercontent.com/Techcps/Google-Cloud-Skills-Boost/master/Using%20Role-based%20Access%20Control%20in%20Kubernetes%20Engine/techcps493.sh
-sudo chmod +x techcps493.sh
-./techcps493.sh
+curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Using%20Role-based%20Access%20Control%20in%20Kubernetes%20Engine/loser493.sh
+sudo chmod +x loser493.sh
+./loser493.sh
 ```
 
 ---
