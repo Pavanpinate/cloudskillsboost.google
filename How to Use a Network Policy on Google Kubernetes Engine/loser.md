@@ -17,9 +17,9 @@
 ### 🚨Copy and run the below commands in Cloud Shell:
 
 ```
-curl -LO raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/How%20to%20Use%20a%20Network%20Policy%20on%20Google%20Kubernetes%20Engine/techcps480.sh
-sudo chmod +x techcps480.sh
-./techcps480.sh
+curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/How%20to%20Use%20a%20Network%20Policy%20on%20Google%20Kubernetes%20Engine/loser480.sh
+sudo chmod +x loser480.sh
+./loser480.sh
 ```
 
 ### Congratulations, you're all done with the lab 😄
