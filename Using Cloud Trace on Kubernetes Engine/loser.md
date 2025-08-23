@@ -16,11 +16,15 @@
 ### 🚨Copy and run the below commands in Cloud Shell:
 
 ```
-curl -LO https://raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Transacting%20Digital%20Assets%20with%20Multi-Party%20Computation%20and%20Confidential%20Space/loser1128.sh
+export ZONE=
+```
 
-sudo chmod +x loser1128.sh
+```
+curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Using%20Cloud%20Trace%20on%20Kubernetes%20Engine/loser484.sh
 
-./loser1128.sh
+sudo chmod +x loser484.sh
+
+./loser484.sh
 ```
 ---
 
