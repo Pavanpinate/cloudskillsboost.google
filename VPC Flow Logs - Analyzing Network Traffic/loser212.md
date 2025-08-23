@@ -16,9 +16,9 @@
 ## 🚨Copy and run the below commands in Cloud Shell:
 
 ```
-curl -LO raw.githubusercontent.com/Techcps/Google-Cloud-Skills-Boost/master/VPC%20Flow%20Logs%20Analyzing%20Network%20Traffic/techcps212.sh
-sudo chmod +x techcps212.sh
-./techcps212.sh
+curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/VPC%20Flow%20Logs%20-%20Analyzing%20Network%20Traffic/loser212.sh
+sudo chmod +x loser212.sh
+./loser212.sh
 ```
 
 - **Sink Name: vpc-flows**
