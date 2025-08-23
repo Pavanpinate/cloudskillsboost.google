@@ -29,7 +29,7 @@ echo "export ZONE=$ZONE" > cp.sh
 
 source cp.sh
 
-cat > techcps.sh <<'EOF_CP'
+cat > loser.sh <<'EOF_CP'
 
 source /tmp/cp.sh
 
@@ -58,5 +58,5 @@ gcloud compute scp cp.sh gke-demo-bastion:/tmp --project=$DEVSHELL_PROJECT_ID --
 
 gcloud compute scp techcps.sh gke-demo-bastion:/tmp --project=$DEVSHELL_PROJECT_ID --zone=$ZONE --quiet
 
-gcloud compute ssh gke-demo-bastion --project=$DEVSHELL_PROJECT_ID --zone=$ZONE --quiet --command="bash /tmp/techcps.sh"
+gcloud compute ssh gke-demo-bastion --project=$DEVSHELL_PROJECT_ID --zone=$ZONE --quiet --command="bash /tmp/loser.sh"
 
