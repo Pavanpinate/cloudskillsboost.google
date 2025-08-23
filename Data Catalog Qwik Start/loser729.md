@@ -17,9 +17,9 @@
 
 
 ```
-curl -LO raw.githubusercontent.com/Techcps/Google-Cloud-Skills-Boost/master/Data%20Catalog%20Qwik%20Start/techcps729.sh
-sudo chmod +x techcps729.sh
-./techcps729.sh
+curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Data%20Catalog%20Qwik%20Start/loser729.sh
+sudo chmod +x loser729.sh
+./loser729.sh
 ```
 
 ---
