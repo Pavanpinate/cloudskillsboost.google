@@ -17,9 +17,9 @@
 ### 🚨Copy and run the below commands in Cloud Shell:
 
 ```
-curl -LO raw.githubusercontent.com/Techcps/Google-Cloud-Skills-Boost/master/BigQuery%3A%20Qwik%20Start%20-%20Command%20Line/techcps071.sh
-sudo chmod +x techcps071.sh
-./techcps071.sh
+curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/BigQuery_%20Qwik%20Start%20-%20Command%20Line/loser071.sh
+sudo chmod +x loser071.sh
+./loser071.sh
 ```
 ---
 
