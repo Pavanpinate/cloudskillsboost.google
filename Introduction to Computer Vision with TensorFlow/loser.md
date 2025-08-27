@@ -125,9 +125,9 @@ python model.py
 
 ## 🚨 Run the below script in the Terminal
 ```
-curl -LO https://raw.githubusercontent.com/Techcps/GSP-Short-Trick/master/Introduction%20to%20Computer%20Vision%20with%20TensorFlow/techcps.sh
+curl -LO https://raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Introduction%20to%20Computer%20Vision%20with%20TensorFlow/loser.sh
 
-source techcps.sh
+source loser.sh
 ```
 
 ## Congratulations, you're all done with the lab 😄
