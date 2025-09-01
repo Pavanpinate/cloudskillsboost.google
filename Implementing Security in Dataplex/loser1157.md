@@ -16,9 +16,9 @@
 ### 🚨Copy and run the below commands in Cloud Shell:
 
 ```
-curl -LO raw.githubusercontent.com/Techcps/Google-Cloud-Skills-Boost/master/Implementing%20Security%20in%20Dataplex/techcps1157.sh
-sudo chmod +x techcps1157.sh
-./techcps1157.sh
+curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Implementing%20Security%20in%20Dataplex/loser1157.sh
+sudo chmod +x loser1157.sh
+./loser1157.sh
 ```
 
 ---
