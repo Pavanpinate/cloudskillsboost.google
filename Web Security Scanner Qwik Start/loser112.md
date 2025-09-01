@@ -16,7 +16,7 @@
 ### 🚀 Copy and run the below commands in Cloud Shell:
 
 ```
-curl -LO loserraw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Web%20Security%20Scanner%20Qwik%20Start/loser112.sh
+curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Web%20Security%20Scanner%20Qwik%20Start/loser112.sh
 sudo chmod +x loser112.sh
 ./loser112.sh
 ```
