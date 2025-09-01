@@ -13,7 +13,7 @@
 
 ---
 
-### 💡 Open this link and download the file [Click Here](https://github.com/Techcps/Google-Cloud-Skills-Boost/blob/main/Develop%20No-Code%20Chat%20Apps%20with%20AppSheet/techcps.xlsx)
+### 💡 Open this link and download the file [Click Here](https://github.com/Pavanpinate/cloudskillsboost.google/blob/main/Develop%20No-Code%20Chat%20Apps%20with%20AppSheet/loser.xlsx)
 
 ### 💡 Google Sheet [Click Here](https://docs.google.com/spreadsheets)
 
