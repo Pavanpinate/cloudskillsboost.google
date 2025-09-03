@@ -15,6 +15,10 @@
 ---
 
 ### 🚨Copy and run the below commands in Cloud Shell:
+
+```
+export ZONE=
+```
 ```
 curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Continuous%20Delivery%20with%20Google%20Cloud%20Deploy/loser1079.sh
 sudo chmod +x loser1079.sh
