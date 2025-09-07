@@ -18,7 +18,7 @@
 ```
 rm intro_gemini_curl-v2.0.0.ipynb
 
-curl -LO https://raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Getting%20Started%20with%20the%20Gemini%20API%20in%20Vertex%20AI%20with%20cURL/loser1228.sh
+curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Getting%20Started%20with%20the%20Gemini%20API%20in%20Vertex%20AI%20with%20cURL/loser1228.sh
 ```
 
 ---
