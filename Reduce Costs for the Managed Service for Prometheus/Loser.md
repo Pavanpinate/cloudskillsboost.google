@@ -16,7 +16,7 @@
 
 ```bash
 curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Reduce%20Costs%20for%20the%20Managed%20Service%20for%20Prometheus/Loser.sh
-sudo chmod +x loser.sh
+sudo chmod +x Loser.sh
 ./loser.sh
 ```
 
