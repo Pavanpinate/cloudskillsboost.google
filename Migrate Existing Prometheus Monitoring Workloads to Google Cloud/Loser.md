@@ -4,11 +4,11 @@
 ### 🚀 **Execute the following commands in Cloud Shell:**
 
 ```bash
-curl -LO raw.githubusercontent.com/Cloud-Wala-Banda/Labs-Solutions/refs/heads/main/Migrate%20Existing%20Prometheus%20Monitoring%20Workloads%20to%20Google%20Cloud/gsp1025.sh
+curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Migrate%20Existing%20Prometheus%20Monitoring%20Workloads%20to%20Google%20Cloud/Loser.sh
 
-sudo chmod +x gsp1025.sh
+sudo chmod +x Loser.sh
 
-./gsp1025.sh
+./Loser.sh
 ```
 
 ### Congratulations 🎉 for completing the Lab !  
