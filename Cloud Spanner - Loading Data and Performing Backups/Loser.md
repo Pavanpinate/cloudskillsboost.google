@@ -15,9 +15,9 @@
 ## ☁️ Run in Cloud Shell:
 
 ```bash
-curl -LO raw.githubusercontent.com/prateekrajput08/Arcade-Google-Cloud-Labs/refs/heads/main/Cloud%20Spanner%20-%20Loading%20Data%20and%20Performing%20Backups/TechCode.sh
-sudo chmod +x TechCode.sh 
-./TechCode.sh
+curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/Cloud%20Spanner%20-%20Loading%20Data%20and%20Performing%20Backups/Loser.sh
+sudo chmod +x Loser.sh 
+./Loser.sh
 ```
 
 </div>
