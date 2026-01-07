@@ -1,0 +1,15 @@
+
+# Data Ingestion into BigQuery from Cloud Storage
+
+
+
+
+
+```bash
+
+bq mk work_day && bq load --source_format=CSV --skip_leading_rows=1 work_day.employee gs://qwiklabs-gcp-04-d6c61a671c00-5xyr-bucket/employees.csv employee_id:INTEGER,device_id:STRING,username:STRING,department:STRING,office:STRING
+```
+
+
+
+
