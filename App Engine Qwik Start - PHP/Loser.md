@@ -15,38 +15,12 @@
 ## ☁️ Run in Cloud Shell:
 
 ```bash
-curl -LO raw.githubusercontent.com/prateekrajput08/Arcade-Google-Cloud-Labs/refs/heads/main/App%20Engine%3A%20Qwik%20Start%20-%20PHP/TechCode.sh
-sudo chmod +x TechCode.sh 
-./TechCode.sh
+curl -LO raw.githubusercontent.com/Pavanpinate/cloudskillsboost.google/refs/heads/main/App%20Engine%20Qwik%20Start%20-%20PHP/Loser.sh
+sudo chmod +x Loser.sh 
+./Loser.sh
 ```
 
 </div>
 
 ---
 
-## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
-
-<div align="center" style="padding: 5px;">
-  <h3>📱 Join the Tech & Code Community</h3>
-  
-  <a href="https://www.youtube.com/@TechCode9?sub_confirmation=1">
-    <img src="https://img.shields.io/badge/Subscribe-Tech%20&%20Code-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube Channel">
-  </a>
-  &nbsp;
-  <a href="https://www.linkedin.com/in/prateekrajput08/">
-    <img src="https://img.shields.io/badge/LINKEDIN-Prateek%20Rajput-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
-</a>
-
-
-</div>
-
----
-
-<div align="center">
-  <p style="font-size: 12px; color: #586069;">
-    <em>This guide is provided for educational purposes. Always follow Qwiklabs terms of service and YouTube's community guidelines.</em>
-  </p>
-  <p style="font-size: 12px; color: #586069;">
-    <em>Last updated: May 2025</em>
-  </p>
-</div>
